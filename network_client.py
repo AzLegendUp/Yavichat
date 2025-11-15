@@ -13,9 +13,9 @@ class NetworkClient:
     def connect(self, ip, port, username, on_message, on_users_update, on_notification):
         try:
             self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.socket.settimeout(5)  # Timeout de 5 segundos
+            self.socket.settimeout(5)  
             self.socket.connect((ip, port))
-            self.socket.settimeout(None)  # Remover timeout después de conectar
+            self.socket.settimeout(None)  
             
             # Enviar nombre de usuario
             self.socket.send(username.encode("utf-8"))

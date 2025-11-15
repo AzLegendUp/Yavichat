@@ -1,12 +1,10 @@
-# main.py — UI adaptable (sin Window.size fijo)
 
 import threading
 from kivy.config import Config
 from kivy.metrics import dp
 
-# Ajustes livianos (no afectan lógica de red)
-Config.set('kivy', 'keyboard_mode', 'system')  # usa el teclado nativo del teléfono
-Config.set('graphics', 'multisamples', '0')   # deja igual para evitar errores en Android
+Config.set('kivy', 'keyboard_mode', 'system')  
+Config.set('graphics', 'multisamples', '0')   
 
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -24,23 +22,20 @@ from client_discovery import DiscoveryClient
 from network_client import NetworkClient
 
 
-# ---------------------------------------------------
+
 # Pantalla: Inicio
-# ---------------------------------------------------
+
 class InicioScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.md_bg_color = [0.08, 0.09, 0.12, 1]
 
-        # Scroll raíz para evitar cortes en móvil chico
         root_scroll = MDScrollView(size_hint=(1, 1))
         self.add_widget(root_scroll)
 
-        # Centro el contenido vertical/horizontal
         anchor = AnchorLayout(anchor_y="center", anchor_x="center", size_hint=(1, 1))
         root_scroll.add_widget(anchor)
 
-        # Contenido adaptable (NO altura fija)
         content = MDBoxLayout(
             orientation="vertical",
             spacing=dp(20),
@@ -125,9 +120,8 @@ class InicioScreen(Screen):
         dlg.open()
 
 
-# ---------------------------------------------------
+
 # Pantalla: Lista de usuarios
-# ---------------------------------------------------
 class ListaUsuariosScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -359,9 +353,8 @@ class ChatScreen(Screen):
         self.manager.current = "lista"
 
 
-# ---------------------------------------------------
 # App
-# ---------------------------------------------------
+
 class YaviChatApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

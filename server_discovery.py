@@ -3,7 +3,7 @@ import threading
 import time
 
 BROADCAST_PORT = 5001
-BROADCAST_INTERVAL = 2  # segundos
+BROADCAST_INTERVAL = 2  
 
 class DiscoveryServer:
     def __init__(self, server_ip, server_port):
