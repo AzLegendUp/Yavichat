@@ -1,0 +1,73 @@
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# --- BUILD & DIST ---
+build/
+dist/
+bin/
+*.apk
+*.aab
+
+# --- KIVY ---
+*.kv~
+*.atlas
+*.spec
+*.sqlite3
+*.db
+.kivy/
+.kivy_cache/
+*/__pycache__/
+
+# --- BUILDOZER ---
+.buildozer/
+*.keystore
+*.gradle/
+.gradle/
+*.iml
+
+# --- ANDROID ---
+*.dex
+*.class
+*.apk
+*.aar
+*.jar
+*.so
+
+# --- SYSTEM FILES ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.tmp
+
+# --- LOGS ---
+*.log
+*.out
+
+# --- ENVIRONMENTS ---
+env/
+venv/
+.venv/
+*/venv/
+*/env/
+
+# --- COMPILATION ---
+*.o
+*.a
+*.so
+
+# --- ARCHIVES ---
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# --- OTHER ---
+*.bak
+*.old
